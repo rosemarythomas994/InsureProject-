@@ -45,6 +45,14 @@ pipeline {
        sh 'docker push pavanpappu/demo:3.0'
           }
       } 
+
+stage('deploy using ansible'){
+  steps{
+    ansiblePlaybook disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'ansible.yml', vaultTmpPath: ''
+          }
+  
+    }
+
   }
 }
 
