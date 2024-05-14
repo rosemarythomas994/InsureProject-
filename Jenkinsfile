@@ -37,9 +37,9 @@ pipeline {
       withCredentials([usernamePassword(credentialsId: 'Dockerlogin-user', passwordVariable: 'dockerpass', usernameVariable: 'dockerlogin')]) {
       sh 'docker login -u ${dockerlogin} -p ${dockerpass}'
         
-            }
-         }
-      }
+                                            }
+           }
+        }
   stage('push the image'){
     steps{
        sh 'docker push pavanpappu/demo:2.0'
