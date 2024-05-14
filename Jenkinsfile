@@ -25,12 +25,13 @@ pipeline {
            }
          }
 
-  stage('create image using the package')
+  stage('create image using the package'){
     steps{
       echo 'creating a docker images from the package'
-      sh 'docker build -t pavanpappu1019/insureproject:01 . '
+      sh 'docker build -t pavanpappu1019/insureproject:1.0 .'
           }
         }
-     }
+  }
 }
+
          
