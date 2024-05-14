@@ -42,7 +42,7 @@ pipeline {
         }
   stage('push the image'){
     steps{
-       sh 'docker push pavanpappu/demo:2.0'
+       sh 'docker push pavanpappu/demo:3.0'
           }
       } 
   }
