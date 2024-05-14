@@ -31,6 +31,22 @@ pipeline {
       sh 'docker build -t pavanpappu/insureproject:1.0 .'
           }
         }
+  stage('Docker login'){
+    steps{
+      echo 'login to docker hub to push images'
+      withCredentials([usernamePassword(credentialsId: 'Dockerlogin-user', passwordVariable: 'dockerpass', usernameVariable: 'dockerlogin')]) {
+      sh 'docker login -u ${env.dockerlogin} -p ${env.dockerpass}'
+        
+            }
+         }
+      }
+  stage('push the image'){
+    steps{
+       sh 'docker push pavanpappu/demo:2.0'
+          }
+      }
+      
+    
   }
 }
 
